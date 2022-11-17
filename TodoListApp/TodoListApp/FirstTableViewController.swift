@@ -28,6 +28,7 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         //data情報をcellに表示
+     
         cell.textLabel?.text = data[indexPath.row].item
       return cell
     }

@@ -9,10 +9,11 @@ class DetailViewController: UIViewController {
     @IBOutlet var itemLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     private let realm = try! Realm()
+   
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         // DateFormatter を使用して書式とロケールを指定する
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:  "yyyy-MM-dd", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:"yyyy/MM/dd", options: 0, locale: Locale(identifier: "ja_JP"))
         return dateFormatter
     }()
     override func viewDidLoad() {

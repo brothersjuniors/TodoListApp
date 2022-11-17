@@ -10,22 +10,22 @@ import RealmSwift
 class AddViewController: UIViewController {
     @IBOutlet var textField: UITextField!
     @IBOutlet var picker: UIDatePicker!
-
+    let timeStyle = "yyyy/MM/dd"
     private let realm = try! Realm()
     public var complitionHandler:(()->Void)?
     let df = DateFormatter()
     var date = Date()
  override func viewDidLoad() {
         super.viewDidLoad()
-        //        picker.preferredDatePickerStyle = .compact
-        //        picker.datePickerMode = .date
+           picker.preferredDatePickerStyle = .compact
+              picker.datePickerMode = .date
         textField.becomeFirstResponder()
         picker.setDate(date, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .done,target: self,action: #selector (tapSaveButton))
     }
     func format(date:Date)->String{
    let dateformatter = DateFormatter()
-          dateformatter.dateFormat = "yyyy/MM/dd"
+          dateformatter.dateFormat = timeStyle
           let strDate = dateformatter.string(from: date)
         return strDate
       }
@@ -35,7 +35,7 @@ class AddViewController: UIViewController {
        let _: DateFormatter = {
                 let dateFormatter = DateFormatter()
                 // DateFormatter を使用して書式とロケールを指定する
-                dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:  "yyyy-MM-dd", options: 0, locale: Locale(identifier: "ja_JP"))
+                dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:  timeStyle, options: 0, locale: Locale(identifier: "ja_JP"))
                 return dateFormatter
             }()
             realm.beginWrite()
