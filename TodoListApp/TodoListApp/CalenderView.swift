@@ -68,6 +68,8 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
     
         
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        let realm = try! Realm()
+        data = realm.objects(TodoListItem.self).map({ $0 })
         label.text = df.string(from: date)
         
         df.timeStyle = .none
@@ -85,7 +87,11 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         tableView.reloadData()
         df.dateFormat = timeStyle
         for num in 0..<data.count where df.string(from: date) == df.string(from: data[num].date) {
+         
             return 1
         }
+       
         return 0
-    }}
+    }
+    
+}

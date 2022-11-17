@@ -12,10 +12,11 @@ class FirstTableViewController: UITableViewController {
     let realm = try! Realm()
     //TodoListItemをdataとしてインスタンス化
     private var data = [TodoListItem]()
+    var itemList: Results<TodoListItem>!
  override func viewDidLoad() {
         super.viewDidLoad()
         //dataにデータを入力
-        data = realm.objects(TodoListItem.self).map({ $0 })
+     data = realm.objects(TodoListItem.self).map({ $0 })
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
  }
     // MARK: - Table view data source
@@ -23,6 +24,7 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         return 55
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
   return data.count
     }
  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,7 +33,25 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
      
         cell.textLabel?.text = data[indexPath.row].item
       return cell
+     
     }
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+//     {
+//         return true
+//     }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            try! realm.write {
+//
+//                realm.delete(data[indexPath.row])
+//                tableView.deleteRows(at: [indexPath], with: .automatic)
+//                tableView.reloadData()
+//            }
+//        
+//        }
+//
+//    }
+        
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = data[indexPath.row]
