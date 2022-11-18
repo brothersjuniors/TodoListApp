@@ -16,6 +16,8 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
     //今日の日付
     let dt = Date()
     let df = DateFormatter()
+    fileprivate weak var calendar: FSCalendar!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -24,15 +26,11 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         cell.textLabel?.text = data[indexPath.row].item
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let realm = try! Realm()
-        data = realm.objects(TodoListItem.self).map({ $0 })
-        tableView.reloadData()
-    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    fileprivate weak var calendar: FSCalendar!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cells")
@@ -42,6 +40,14 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         df.dateFormat = DateFormatter.dateFormat(fromTemplate: timeStyle, options: 0, locale: Locale(identifier: "ja_JP"))
         configureRefreshControl()
         tableView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let realm = try! Realm()
+        data = realm.objects(TodoListItem.self).map({ $0 })
+        configureRefreshControl()
+        tableView.reloadData()
+       
     }
     func configureRefreshControl () {
           //RefreshControlを追加する処理
@@ -55,7 +61,12 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
-        }}
+        }
+       viewWillAppear(true)
+        
+        data = realm.objects(TodoListItem.self).map({ $0 })
+        tableView.reloadData()
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         tableView.reloadData()
@@ -68,8 +79,10 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
     
         
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+   
         let realm = try! Realm()
         data = realm.objects(TodoListItem.self).map({ $0 })
+      
         label.text = df.string(from: date)
         
         df.timeStyle = .none
@@ -84,8 +97,9 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         tableView.reloadData()
     }
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        tableView.reloadData()
+       
         df.dateFormat = timeStyle
+        
         for num in 0..<data.count where df.string(from: date) == df.string(from: data[num].date) {
          
             return 1
@@ -93,5 +107,5 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
        
         return 0
     }
-    
+   
 }

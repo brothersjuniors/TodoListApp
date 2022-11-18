@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="1514" y="-366"/>
         </scene>
-        <!--Item-->
+        <!--Calendar-->
         <scene sceneID="NUs-TH-Ki5">
             <objects>
                 <viewController id="w4i-qh-HtR" customClass="CalenderView" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,7 +291,7 @@
                             <constraint firstItem="Cz1-pV-KCV" firstAttribute="top" secondItem="T8H-5m-Rq0" secondAttribute="bottom" id="zmg-Vr-ukp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="text.book.closed" catalog="system" id="Ndc-1B-K91"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="Ndc-1B-K91"/>
                     <connections>
                         <outlet property="label" destination="Cz1-pV-KCV" id="bHc-gJ-XE9"/>
                         <outlet property="tableView" destination="hWf-gx-8MG" id="8D0-9N-21v"/>
@@ -299,10 +299,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9n-mM-tkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1514" y="315"/>
+            <point key="canvasLocation" x="1514" y="309"/>
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
