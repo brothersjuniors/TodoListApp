@@ -13,45 +13,45 @@ class FirstTableViewController: UITableViewController {
     //TodoListItemをdataとしてインスタンス化
     private var data = [TodoListItem]()
     var itemList: Results<TodoListItem>!
- override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         //dataにデータを入力
-     data = realm.objects(TodoListItem.self).map({ $0 })
+        data = realm.objects(TodoListItem.self).map({ $0 })
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
- }
+    }
     // MARK: - Table view data source
-override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-  return data.count
+        return data.count
     }
- override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         //data情報をcellに表示
-     
-        cell.textLabel?.text = data[indexPath.row].item
-      return cell
-     
-    }
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-//     {
-//         return true
-//     }
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            try! realm.write {
-//
-//                realm.delete(data[indexPath.row])
-//                tableView.deleteRows(at: [indexPath], with: .automatic)
-//                tableView.reloadData()
-//            }
-//        
-//        }
-//
-//    }
         
+        cell.textLabel?.text = data[indexPath.row].item
+        return cell
+        
+    }
+    //    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    //     {
+    //         return true
+    //     }
+    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            try! realm.write {
+    //
+    //                realm.delete(data[indexPath.row])
+    //                tableView.deleteRows(at: [indexPath], with: .automatic)
+    //                tableView.reloadData()
+    //            }
+    //
+    //        }
+    //
+    //    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = data[indexPath.row]
@@ -65,21 +65,34 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         vc.navigationItem.largeTitleDisplayMode = .never
         //data[indexPath.row]データの表示データをDetailViewControllerのtitleに表示
         vc.title = item.item
-//自動でDetailViewControllerへ遷移
+        //自動でDetailViewControllerへ遷移
         navigationController?.pushViewController(vc, animated: true)
     }
- @IBAction func dateAddButton(){
+    @IBAction func dateAddButton(){
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? AddViewController else { return }
         vc.complitionHandler = { [weak self] in
             self?.refresh()
-  }
+        }
         vc.title = "New Item"
         vc.navigationItem.largeTitleDisplayMode = .automatic
         //自動でDetailViewControllerへ遷移
         navigationController?.pushViewController(vc, animated: true)
- }
+    }
     func refresh(){
         data = realm.objects(TodoListItem.self).map({ $0 })
         tableView.reloadData()
     }
+    
+    
+    @IBAction func goCalendar(_ sender: Any) {
+        guard let cale = storyboard?.instantiateViewController(withIdentifier: "cale") as? CalenderView else { return }
+     
+        cale.title = "New Item"
+        cale.navigationItem.largeTitleDisplayMode = .automatic
+        //自動でDetailViewControllerへ遷移
+        navigationController?.pushViewController(cale, animated: true)
+    }
+   
+    
+    
 }
