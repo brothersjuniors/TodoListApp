@@ -9,7 +9,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var itemLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     private let realm = try! Realm()
-   
+ 
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         // DateFormatter を使用して書式とロケールを指定する
