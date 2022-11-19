@@ -88,7 +88,7 @@ class FirstTableViewController: UITableViewController {
     @IBAction func goCalendar(_ sender: Any) {
         guard let cale = storyboard?.instantiateViewController(withIdentifier: "CalenderView") as? CalenderView else { return }
      
-        cale.title = "New Item"
+        cale.title = "Calendar"
         cale.navigationItem.largeTitleDisplayMode = .automatic
         //自動でDetailViewControllerへ遷移
         navigationController?.pushViewController(cale, animated: true)

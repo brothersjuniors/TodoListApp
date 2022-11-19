@@ -12,7 +12,7 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var data = [TodoListItem]()
-    let timeStyle = "yyyy/MM/dd"
+    let timeStyle = "yyyy年MM月dd日"
     //今日の日付
     let dt = Date()
     let df = DateFormatter()
@@ -20,6 +20,9 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath)
@@ -61,7 +64,7 @@ class CalenderView: UIViewController,FSCalendarDelegate,FSCalendarDataSource,UIT
         data = realm.objects(TodoListItem.self).sorted(byKeyPath: "date",ascending: true).map({ $0 })
         label.text = df.string(from: date)
         df.timeStyle = .none
-        df.dateStyle = .short
+        df.dateStyle = .long
         df.locale = Locale(identifier: "ja_JP")
         //今の日付とdate内の日付の一致
         if df.string(from: dt) == df.string(from: date) {

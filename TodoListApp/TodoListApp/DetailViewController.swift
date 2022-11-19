@@ -13,11 +13,12 @@ class DetailViewController: UIViewController {
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         // DateFormatter を使用して書式とロケールを指定する
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:"yyyy/MM/dd", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate:"yyyy年MM月dd日", options: 0, locale: Locale(identifier: "ja_JP"))
         return dateFormatter
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         itemLabel.text = item?.item
         dateLabel.text = Self.dateFormatter.string(from: item!.date)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(goTrash))

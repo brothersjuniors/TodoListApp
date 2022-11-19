@@ -29,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLV-OQ-CBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="-366"/>
+            <point key="canvasLocation" x="2605" y="-316"/>
         </scene>
         <!--ToDoList-->
         <scene sceneID="hP4-Zd-FF6">
@@ -51,7 +51,7 @@
                                 <action selector="goCalendar:" destination="Cnm-6z-PIl" id="5uJ-3D-CXT"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7el-mx-ldt">
+                        <barButtonItem key="rightBarButtonItem" title="追加" id="7el-mx-ldt">
                             <connections>
                                 <action selector="dateAddButton" destination="Cnm-6z-PIl" id="2U6-Rx-87K"/>
                             </connections>
@@ -62,7 +62,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCF-AX-fG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3272" y="-366"/>
+            <point key="canvasLocation" x="3271" y="-316"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="GKS-2x-Hhw">
@@ -85,14 +85,13 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D11-2O-5Qo"/>
-                        <color key="backgroundColor" red="0.28714822169519305" green="0.92128556969999997" blue="0.83623742496780507" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.27159767725769834" green="0.88159175656868682" blue="0.80710734514655325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="52c-TU-nM0" firstAttribute="leading" secondItem="D11-2O-5Qo" secondAttribute="leading" constant="20" id="2xg-SZ-kxw"/>
                             <constraint firstItem="52c-TU-nM0" firstAttribute="centerX" secondItem="NHk-Xb-80g" secondAttribute="centerX" id="5aU-y8-SBN"/>
                             <constraint firstItem="JBa-18-UK6" firstAttribute="leading" secondItem="D11-2O-5Qo" secondAttribute="leading" id="6He-kM-w1m"/>
-                            <constraint firstItem="JBa-18-UK6" firstAttribute="top" secondItem="52c-TU-nM0" secondAttribute="bottom" constant="30" id="93M-kO-792"/>
                             <constraint firstItem="JBa-18-UK6" firstAttribute="trailing" secondItem="D11-2O-5Qo" secondAttribute="trailing" id="E48-dV-Ng1"/>
-                            <constraint firstItem="JBa-18-UK6" firstAttribute="top" secondItem="52c-TU-nM0" secondAttribute="bottom" constant="30" id="bCx-G2-6V3"/>
+                            <constraint firstItem="JBa-18-UK6" firstAttribute="top" secondItem="52c-TU-nM0" secondAttribute="bottom" constant="30" id="SLE-8y-tRz"/>
                             <constraint firstItem="52c-TU-nM0" firstAttribute="top" secondItem="D11-2O-5Qo" secondAttribute="top" constant="30" id="jr6-gI-yxp"/>
                             <constraint firstItem="D11-2O-5Qo" firstAttribute="trailing" secondItem="52c-TU-nM0" secondAttribute="trailing" constant="20" id="zU4-I7-0ks"/>
                         </constraints>
@@ -104,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laC-M8-gCR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="350"/>
+            <point key="canvasLocation" x="3271" y="350"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Tei-Lx-N7u">
@@ -120,10 +119,10 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="RAK-Bp-oEd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.030075450229999998" green="0.030075450229999998" blue="0.030075450229999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期　日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-wV-uw9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期 日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-wV-uw9">
                                 <rect key="frame" x="20" y="57" width="200.33333333333334" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="3ol-XO-1e2"/>
@@ -132,17 +131,17 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="oaP-RB-Ud1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <color key="textColor" red="0.57254904510000004" green="0.26666668059999998" blue="0.73333334920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-ow-7nM">
                                 <rect key="frame" x="20" y="102" width="308" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.030075450226203726" green="0.030075450226203726" blue="0.030075450226203726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g50-QU-gBc">
-                                <rect key="frame" x="20" y="165.66666666666666" width="205" height="25"/>
+                                <rect key="frame" x="20" y="160.66666666666666" width="205" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="N7n-fr-nc0"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="O2H-32-nv1"/>
@@ -150,15 +149,16 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="h4V-dB-N18"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <color key="textColor" red="0.57180973690000003" green="0.26717570330000001" blue="0.73283186710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XoV-dM-ccE"/>
-                        <color key="backgroundColor" red="0.96841138601303101" green="0.8756113584794698" blue="0.1695677678048407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.96841138601303101" green="0.80744575349704684" blue="0.082926853449284674" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XoV-dM-ccE" firstAttribute="trailing" secondItem="g50-QU-gBc" secondAttribute="trailing" constant="165" id="8Uc-cX-jwB"/>
                             <constraint firstItem="1vZ-wV-uw9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XoV-dM-ccE" secondAttribute="leading" id="Ask-US-jWA"/>
+                            <constraint firstItem="g50-QU-gBc" firstAttribute="top" secondItem="5uf-ow-7nM" secondAttribute="bottom" constant="25" id="Ebr-px-evg"/>
                             <constraint firstItem="1vZ-wV-uw9" firstAttribute="leading" secondItem="XoV-dM-ccE" secondAttribute="leading" constant="20" id="GlF-C8-fRh"/>
                             <constraint firstItem="1vZ-wV-uw9" firstAttribute="top" secondItem="XoV-dM-ccE" secondAttribute="top" constant="10" id="Pvj-7O-SAT"/>
                             <constraint firstItem="g50-QU-gBc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XoV-dM-ccE" secondAttribute="leading" id="Rao-5e-n9Q"/>
@@ -166,7 +166,6 @@
                             <constraint firstItem="5uf-ow-7nM" firstAttribute="top" secondItem="1vZ-wV-uw9" secondAttribute="bottom" constant="20" id="dFQ-JY-PnA"/>
                             <constraint firstItem="JcA-jS-BjT" firstAttribute="leading" secondItem="XoV-dM-ccE" secondAttribute="leading" constant="20" id="dlz-UF-vlS"/>
                             <constraint firstItem="XoV-dM-ccE" firstAttribute="trailing" secondItem="5uf-ow-7nM" secondAttribute="trailing" constant="62" id="g07-Hn-F5a"/>
-                            <constraint firstItem="g50-QU-gBc" firstAttribute="top" secondItem="5uf-ow-7nM" secondAttribute="bottom" constant="30" id="hlV-XR-pZE"/>
                             <constraint firstItem="JcA-jS-BjT" firstAttribute="top" secondItem="5uf-ow-7nM" secondAttribute="bottom" constant="70" id="mxq-a7-YU4"/>
                             <constraint firstItem="XoV-dM-ccE" firstAttribute="trailing" secondItem="JcA-jS-BjT" secondAttribute="trailing" constant="20" id="obP-oP-sX4"/>
                             <constraint firstItem="JcA-jS-BjT" firstAttribute="leading" secondItem="XoV-dM-ccE" secondAttribute="leading" constant="20" id="sY0-9c-l0a"/>
@@ -183,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZ2-ql-BWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3227.6923076923076" y="349.76303317535542"/>
+            <point key="canvasLocation" x="3937" y="350"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="NUs-TH-Ki5">
@@ -283,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9n-mM-tkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="350"/>
+            <point key="canvasLocation" x="2605" y="350"/>
         </scene>
     </scenes>
     <resources>
@@ -295,9 +294,6 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
