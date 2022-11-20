@@ -19,6 +19,7 @@
 		AD0C8A8C290ECE64001E909A /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C8A8B290ECE64001E909A /* TodoListItem.swift */; };
 		AD0C8A8E290ED3C5001E909A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C8A8D290ED3C5001E909A /* AddViewController.swift */; };
 		AD0C8A90290EF535001E909A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C8A8F290EF535001E909A /* DetailViewController.swift */; };
+		AD2FC1562928E7F0000D0E3E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FC1552928E7F0000D0E3E /* Helper.swift */; };
 		AD6F5C0F29135EAB0034AA13 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F5C0E29135EAB0034AA13 /* CalenderView.swift */; };
 		ADF6013C291252E20031E1CB /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = ADF6013B291252E20031E1CB /* CalendarKit */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		AD0C8A8B290ECE64001E909A /* TodoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
 		AD0C8A8D290ED3C5001E909A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AD0C8A8F290EF535001E909A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AD2FC1552928E7F0000D0E3E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AD6F5C0E29135EAB0034AA13 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		F5E73DDFDE36361CCDF679B9 /* Pods-TodoListApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoListApp/Pods-TodoListApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,17 +98,42 @@
 			children = (
 				AD0C8A6E290ECCB4001E909A /* AppDelegate.swift */,
 				AD0C8A70290ECCB4001E909A /* SceneDelegate.swift */,
-				AD0C8A74290ECCB4001E909A /* Main.storyboard */,
+				AD2FC1542928E7C5000D0E3E /* Storybords */,
+				AD2FC1522928E79B000D0E3E /* Controllers */,
+				AD2FC1532928E7B4000D0E3E /* Model */,
 				AD0C8A77290ECCB6001E909A /* Assets.xcassets */,
 				AD0C8A79290ECCB6001E909A /* LaunchScreen.storyboard */,
 				AD0C8A7C290ECCB6001E909A /* Info.plist */,
+			);
+			path = TodoListApp;
+			sourceTree = "<group>";
+		};
+		AD2FC1522928E79B000D0E3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				AD0C8A87290ECD61001E909A /* FirstTableViewController.swift */,
-				AD0C8A8B290ECE64001E909A /* TodoListItem.swift */,
 				AD0C8A8D290ED3C5001E909A /* AddViewController.swift */,
 				AD0C8A8F290EF535001E909A /* DetailViewController.swift */,
 				AD6F5C0E29135EAB0034AA13 /* CalenderView.swift */,
 			);
-			path = TodoListApp;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AD2FC1532928E7B4000D0E3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD0C8A8B290ECE64001E909A /* TodoListItem.swift */,
+				AD2FC1552928E7F0000D0E3E /* Helper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD2FC1542928E7C5000D0E3E /* Storybords */ = {
+			isa = PBXGroup;
+			children = (
+				AD0C8A74290ECCB4001E909A /* Main.storyboard */,
+			);
+			path = Storybords;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +267,7 @@
 				AD0C8A90290EF535001E909A /* DetailViewController.swift in Sources */,
 				AD0C8A6F290ECCB4001E909A /* AppDelegate.swift in Sources */,
 				AD0C8A71290ECCB4001E909A /* SceneDelegate.swift in Sources */,
+				AD2FC1562928E7F0000D0E3E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
